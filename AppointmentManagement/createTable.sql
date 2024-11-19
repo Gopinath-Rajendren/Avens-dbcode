@@ -1,5 +1,5 @@
-//1. Create Tables
-//Start by defining the database schema.
+-- //1. Create Tables
+-- //Start by defining the database schema.
 
 sql
 
