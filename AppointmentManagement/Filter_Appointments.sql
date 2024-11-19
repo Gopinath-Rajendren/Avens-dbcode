@@ -1,7 +1,7 @@
-//5. Filter Appointments
-//Filter appointments by fields like counselor, client, or date.
+-- //5. Filter Appointments
+-- //Filter appointments by fields like counselor, client, or date.
 
-//sql
+sql
 
 -- Filter by counselor
 SELECT * FROM appointments WHERE counselor_id = 2;
