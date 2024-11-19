@@ -1,32 +1,21 @@
--- Create Roles Table --
-CREATE TABLE roles (
-  id SERIAL PRIMARY KEY,
-  role_name VARCHAR(50) UNIQUE NOT NULL
-);
+-- creating our admin 
+create role avens_admin;
 
--- Create Permissions Table --
-CREATE TABLE permissions (
-  id SERIAL PRIMARY KEY,
-  permission_name VARCHAR(50) UNIQUE NOT NULL
-);
+-- add privileges to admin 
 
--- Create Roles Permissions Table --
-CREATE TABLE role_permissions (
-  role_id INT REFERENCES roles(id),
-  permission_id INT REFERENCES permissions(id),
-  PRIMARY KEY (role_id, permission_id)
-);
+alter role avens_admin with  SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'amshs@1747#1';
 
--- Create Users Table --
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  username VARCHAR(50) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL
-);
 
--- Create User Roles Table --
-CREATE TABLE user_roles (
-  user_id INT REFERENCES users(id),
-  role_id INT REFERENCES roles(id),
-  PRIMARY KEY (user_id, role_id)
-);
+-- chaning the role 
+SET ROLE avens_admin;
+
+-- now the admin creates the business analyst role, as admin has the privileges to create roles;
+
+CREATE ROLE avens_ba with LOGIN PASSWORD 'KFJF@13453#1';
+
+-- this user shall have access to only price table, as business analyst would be changing the pricing and offers.
+
+GRANT INSERT, UPDATE, DELETE on avens_ba;
+
+REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM avens_ba;
+

@@ -9,4 +9,6 @@ CREATE TABLE services (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 );
 
+ALTER TABLE services ADD CONSTRAINT s_P PRIMARY KEY(id);
+
 COMMENT ON TABLE services IS 'Stores details about each counseling service type, including type, duration, and pricing.';
