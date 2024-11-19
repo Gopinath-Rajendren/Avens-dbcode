@@ -1,7 +1,7 @@
-//7. Role-Based Access Control
-//Enforce privilege-based access with roles.
+-- //7. Role-Based Access Control
+-- //Enforce privilege-based access with roles.
 
-//sql
+sql
 
 -- Example: Check user role before performing actions
 SELECT u.name, r.name AS role 
