@@ -1,5 +1,5 @@
-//4. Add/Edit Appointments
-//Add New Appointment
+-- //4. Add/Edit Appointments
+-- //Add New Appointment
 
 
 sql
@@ -8,7 +8,7 @@ VALUES (3, 2, '2024-11-25 15:00:00', 'Session with client feedback');
 
 
 
- ///Edit Existing Appointment
+ -- ///Edit Existing Appointment
 
 sql
 Copy code
